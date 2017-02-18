@@ -18,10 +18,12 @@ else:
 for name in ['tengine','flying','eagle','python','go']:
             print name
 
-name = ['tengine','flying','eagle','python','go']
-for name in  range(0,len(name)):
-    print "##"* name,name
-
+name = ['tengine','flying','eagle','python','go','bat','b','a','t']
+for num in  range(0,len(name)):
+    print "##"* num,
+    if num == 7:
+        break
+    print num, name
 
 
 for num in range(0, 20):
