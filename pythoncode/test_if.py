@@ -12,3 +12,17 @@ if x == 'flying':
         print 'I don"n know'
 else:
     print 'not an age'
+
+
+
+for name in ['tengine','flying','eagle','python','go']:
+            print name
+
+name = ['tengine','flying','eagle','python','go']
+for name in  int(len(name)):
+    print name
+
+for num in range(0, 20):
+    print num
+
+
