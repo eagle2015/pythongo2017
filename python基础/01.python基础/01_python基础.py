@@ -68,3 +68,86 @@ python数据类型
             print 'my name is %s and I am %d cm tall'  %  (x,y)
 
 
+and or
+
+A and B，‘且’，A和B都是真的时候，才为真，否则是假
+A or B，‘或’，A和B有一个真的时候，就是真，否则是假
+
+
+流程控制
+
+if else 语句 实现逻辑控制
+
+
+    if(判断真假):
+        如果是真 执行 （缩进）
+    else：
+        如果是假 执行
+    这里的语句，和if无关 都会执行
+
+
+逻辑控制
+
+多层if判断
+
+
+            x = raw_input('please enter you name ')
+            if x=='flying':
+                print 'you are a nice girl!'
+            elif x=='eagle':
+                print 'you are nice too!'
+            else:
+                print 'nice to meet you'
+[slide]
+
+逻辑控制
+
+if可以嵌套多层 (多层缩进)
+
+
+            x = raw_input('please enter you name:')
+            y = raw_input('please enter your age: ')
+            if x == 'flying':
+                if y=='27':
+                    print "%s %s is old" %(x,y)
+                elif y == '10':
+                    print  "%s %s is young" %(x,y)
+                else:
+                    print 'I don"n know'
+            else:
+                print 'not an age'
+
+
+循环--while
+
+一直循环执行语句,注意缩进
+
+
+
+            #注意缩进
+            while 判断条件:
+                #如果判断条件是真，循环体的语句就会一直执行
+                语句1
+                语句2
+                修改判断条件中的变量，使得循环是可以结束的
+            这里的语句，和wilie无关（缩进）
+
+
+
+循环--while
+
+
+            i=0
+            while i< 100:
+                print i
+                i = i + 1
+[slide]
+
+循环--while
+
+
+            name = ''
+            while not name:
+                name = raw_input('please enter you name')
+
+            print 'hello python '+name
