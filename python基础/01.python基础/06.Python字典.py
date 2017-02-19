@@ -550,3 +550,33 @@ print tinydict  # 输出完整的字典
 print tinydict.keys()  # 输出所有键
 print tinydict.values()  # 输出所有值
 
+
+===================================================================
+
+#最好的是用下面的方法来动态的扩展字典：
+a=[111,222,133,414,551,663,737,838,929,920]
+dict1={}  #动态的增加字典
+
+
+'''
+for i in a:
+    if i >662:
+        if 'k1' in dict1.keys():
+            dict1['k1'].append(i)
+        else:
+            dict1['k1'] = [i,]
+    else:
+        if 'k2' in dict1.keys():
+            dict1['k2'].append(i)
+        else:
+            dict1['k2'] = [i,]
+print "dict1:",dict1
+
+'''
+
+dict1: {'k2': [111, 222, 133, 414, 551], 'k1': [663, 737, 838, 929, 920]}
+
+
+
+
+
