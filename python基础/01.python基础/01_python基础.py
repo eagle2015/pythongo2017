@@ -439,73 +439,35 @@ End Len: 0
 
 （二）Python 字典(Dictionary) copy() 方法
 1、描述 Python 字典(Dictionary) copy() 函数返回一个字典的浅复制。
-2、语法
-copy()
-方法语法：
-dict.copy()
-3、参数
-NA。
-4、返回值
-返回一个字典的浅复制。
-5、实例
-以下实例展示了
-copy()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+2、语法copy() 方法语法：dict.copy()
+3、参数NA。
+4、返回值返回一个字典的浅复制。
+5、实例以下实例展示了copy()函数的使用方法：
+
 # !/usr/bin/python
 
-dict1 = {'Name': 'Zara', 'Age': 7};
-
+dict1 = {'Name': 'flying', 'Age': 27,'work':'PE'};
 dict2 = dict1.copy()
 print "New Dictinary : %s" % str(dict2)
-以上实例输出结果为:
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-New
-Dictinary: {'Age': 7, 'Name': 'Zara'}
 
-（三）Python
-字典(Dictionary)
-fromkeys()
-方法
-1、描述
-Python
-字典(Dictionary)
-fromkeys()
-函数用于创建一个新字典，以序列seq中元素做字典的键，value为字典所有键对应的初始值。
-2、语法
-fromkeys()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.fromkeys(seq[, value]))
+
+以上实例输出结果为:
+
+New Dictinary : {'Age': 27, 'work': 'PE', 'Name': 'flying'}
+
+（三）Python字典(Dictionary) fromkeys()方法
+1、描述 Python字典(Dictionary)  fromkeys()函数用于创建一个新字典，以序列seq中元素做字典的键，value为字典所有键对应的初始值。
+2、语法 fromkeys() 方法语法：dict.fromkeys(seq[, value]))
 3、参数
 seq - - 字典键值列表。
 value - - 可选参数, 设置键序列（seq）的值。
-4、返回值
-该方法返回列表。
+4、返回值 :该方法返回列表。
 5、实例
-以下实例展示了
-fromkeys()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+以下实例展示了 fromkeys() 函数的使用方法：
+
 # !/usr/bin/python
 
-seq = ('name', 'age', 'sex')
+seq = ('name', 'age', 'sex','work')
 
 dict = dict.fromkeys(seq)
 print "New Dictionary : %s" % str(dict)
@@ -513,337 +475,158 @@ print "New Dictionary : %s" % str(dict)
 dict = dict.fromkeys(seq, 10)
 print "New Dictionary : %s" % str(dict)
 以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-New
-Dictionary: {'age': None, 'name': None, 'sex': None}
-New
-Dictionary: {'age': 10, 'name': 10, 'sex': 10}
 
-（四）Python
-字典(Dictionary)
-get()
-方法
-1、描述
-Python
-字典(Dictionary)
-get()
-函数返回指定键的值，如果值不在字典中返回默认值。
-2、语法
-get()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.get(key, default=None)
+
+
+'''
+结果：
+New Dictionary : {'age': None, 'work': None, 'name': None, 'sex': None}
+New Dictionary : {'age': 10, 'work': 10, 'name': 10, 'sex': 10}
+'''
+
+（四）Python 字典(Dictionary)  get()方法
+1、描述Python字典(Dictionary) get()函数返回指定键的值，如果值不在字典中返回默认值。
+2、语法 get()方法语法：dict.get(key, default=None)
 3、参数
 key - - 字典中要查找的键。
 default - - 如果指定键的值不存在时，返回该默认值值。
-4、返回值
-返回指定键的值，如果值不在字典中返回默认值None。
+4、返回值:返回指定键的值，如果值不在字典中返回默认值None。
 5、实例
-以下实例展示了
-get()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+get()函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 27}
+dict = {'Name': 'flying', 'Age': 27,'work':'PE'}
 
-print "Value : %s" % dict.get('Age')
-print "Value : %s" % dict.get('Sex', "Never")
+dict = {'Name': 'flying', 'Age': 27,'Work':'PE'};
+print "Age Value : %s" % dict.get('Age')
+print "Sex Value : %s" % dict.get('Sex', "Never")
+print "Work Value : %s" % dict.get('Work')
+print "Name Value : %s" % dict.get('Name')
+
 以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Value: 27
-Value: Never
 
-（五）Python
-字典(Dictionary)
-has_key()
-方法
-1、描述
-Python
-字典(Dictionary)
-has_key()
-函数用于判断键是否存在于字典中，如果键在字典dict里返回true，否则返回false。
-2、语法
-has_key()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.has_key(key)
-3、参数
-key - - 要在字典中查找的键。
-4、返回值
-如果键在字典里返回true，否则返回false。
-5、实例
-以下实例展示了
-has_key()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+Age Value : 27
+Sex Value : Never
+Work Value : PE
+Name Value : flying
+
+
+（五）Python 字典(Dictionary) has_key()方法
+1、描述Python字典(Dictionary):  has_key() 函数用于判断键是否存在于字典中，如果键在字典dict里返回true，否则返回false。
+2、语法:has_key()方法语法：dict.has_key(key)
+3、参数:key - - 要在字典中查找的键。
+4、返回值:如果键在字典里返回true，否则返回false。
+5、实例:has_key()函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7}
+dict = {'Name': 'flying', 'Age': 27,'Work':'PE'};
+print "Age Value : %s" % dict.has_key('Age')
+print "Sex Value : %s" % dict.has_key('Sex')
+print "Work Value : %s" % dict.has_key('Work')
+print "Name Value : %s" % dict.has_key('Name')
 
-print "Value : %s" % dict.has_key('Age')
-print "Value : %s" % dict.has_key('Sex')
 以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Value: True
-Value: False
+Age Value : True
+Sex Value : False
+Work Value : True
+Name Value : True
 
-（六）Python
-字典(Dictionary)
-items()
-方法
-1、描述
-Python
-字典(Dictionary)
-items()
-函数以列表返回可遍历的(键, 值)
-元组数组。
-2、语法
-items()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.items()
-3、参数
-NA。
-4、返回值
-返回可遍历的(键, 值)
-元组数组。
-5、实例
-以下实例展示了
-items()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+
+
+（六）Python字典(Dictionary)items()方法
+1、描述:Python字典(Dictionary) items()函数以列表返回可遍历的(键, 值)元组数组。
+2、语法:items()方法语法：dict.items()
+3、参数:NA。
+4、返回值:返回可遍历的(键, 值)元组数组。
+5、实例:items()函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7}
+dict = {'Name': 'flying', 'Age': 27,'Work':'PE'};
 
 print "Value : %s" % dict.items()
 以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Value: [('Age', 7), ('Name', 'Zara')]
+Value : [('Age', 27), ('Work', 'PE'), ('Name', 'flying')]
 
-（七）Python
-字典(Dictionary)
-keys()
-方法
-1、描述
-Python
-字典(Dictionary)
-keys()
-函数以列表返回一个字典所有的键。
-2、语法
-keys()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.keys()
-3、参数
-NA。
-4、返回值
-返回一个字典所有的键。
-5、实例
-以下实例展示了
-keys()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+
+（七）Python字典(Dictionary) keys()方法
+1、描述 :Python字典(Dictionary)keys() 函数以列表返回一个字典所有的键。
+2、语法:keys()方法语法：dict.keys()
+3、参数NA。
+4、返回值:返回一个字典所有的键。
+5、实例:keys()函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7}
 
+dict = {'Name': 'flying', 'Age': 27,'Work':'PE'};
 print "Value : %s" % dict.keys()
-以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Value: ['Age', 'Name']
+输出结果为：
+Value: ['Age', 'Work', 'Name']
 
-（八）Python
-字典(Dictionary)
-setdefault()
-方法
-1、描述
-Python
-字典(Dictionary)
-setdefault()
-函数和get()
-方法类似, 如果键不已经存在于字典中，将会添加键并将值设为默认值。
-2、语法
-setdefault()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.setdefault(key, default=None)
-3、参数
+
+（八）Python字典(Dictionary)setdefault()方法
+1、描述:Python字典(Dictionary) setdefault()函数和get()方法类似, 如果键不已经存在于字典中，将会添加键并将值设为默认值。
+2、语法:
+        setdefault() 方法语法：dict.setdefault(key, default=None)
+3、参数:
 key - - 查找的键值。
 default - - 键不存在时，设置的默认键值。
-4、返回值
-该方法没有任何返回值。
-5、实例
-以下实例展示了
-setdefault()
+4、返回值:该方法没有任何返回值。
+5、实例:setdefault()
 函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7}
+dict = {'Name': 'flying', 'Age': 27,'Work':'PE'};
 
 print "Value : %s" % dict.setdefault('Age', None)
 print "Value : %s" % dict.setdefault('Sex', None)
-以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Value: 7
-Value: None
+print "Work Value: %s" % dict.setdefault('Name')
 
-（九）Python
-字典(Dictionary)
-update()
-方法
-1、描述
-Python
-字典(Dictionary)
-update()
-函数把字典dict2的键 / 值对更新到dict里。
-2、语法
-update()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.update(dict2)
-3、参数
-dict2 - - 添加到指定字典dict里的字典。
-4、返回值
-该方法没有任何返回值。
-5、实例
-以下实例展示了
-update()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+输出结果为：
+Age Value : 27
+Sex Value : None
+Work Value: flying
+
+
+（九）Python 字典(Dictionary) update()方法
+1、描述: Python 字典(Dictionary)  update()函数把字典dict2的键值对更新到dict里。
+2、语法:
+update() 方法语法：dict.update(dict2)
+3、参数:dict2 - - 添加到指定字典dict里的字典。
+4、返回值:该方法没有任何返回值。
+5、实例: update()函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7}
-dict2 = {'Sex': 'female'}
+dict = {'Name': 'fly, 'Age': 27}
+dict2 = {'Sex': 'female','Work':'PE'}
 
 dict.update(dict2)
-print "Value : %s" % dict
-以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Value: {'Age': 7, 'Name': 'Zara', 'Sex': 'female'}
+print "dict Value : %s" % dict
+
+输出结果为：
+dict Value : {'age': 27, 'Work': 'PE', 'Name': 'fly', 'Sex': 'female'}
 
 
-（十）Python
-字典(Dictionary)
-values()
-方法
-1、描述
-Python
-字典(Dictionary)
-values()
-函数以列表返回字典中的所有值。
-2、语法
-values()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.values()
-3、参数
-NA。
-4、返回值
-返回字典中的所有值。
-5、实例
-以下实例展示了
-values()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+（十）Python 字典(Dictionary) values() 方法
+1、描述: Python 字典(Dictionary) values() 函数以列表返回字典中的所有值。
+2、语法:
+values() 方法语法：dict.values()
+3、参数:NA。
+4、返回值:返回字典中的所有值。
+5、实例:values()函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7}
+dict = {'Name': 'flying', 'Age': 27,'Work':'PE'};
 
-print "Value : %s" % dict.values()
-以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Value: [7, 'Zara']
+print "values Value : %s" % dict.values()
+输出结果为：
+values Value : [27, 'PE', 'fly', 'female']
 
         ---------------------------------------------
 dict 就是key value值，索引有意义
@@ -854,6 +637,7 @@ dict 就是key value值，索引有意义
 d = {
 'name':'flying'
 }
+
 # 获取dict值
 print d['name']
 
