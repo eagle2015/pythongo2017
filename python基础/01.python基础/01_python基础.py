@@ -31,9 +31,7 @@ python数据类型
 ----------------------
 注释
 
-代码不仅是可执行的，还要可读
-代码一行最前面加一个 # 此行内容不会被执行
-方便调试和加上代码解释
+代码不仅是可执行的，还要可读 ,代码一行最前面加一个 # 此行内容不会被执行 ,方便调试和加上代码解释
 '''
     #coding=utf-8
     #获取输入的用户名
@@ -228,6 +226,20 @@ info['name'] = 'flying'
 info['Age'] = '27'
 info['Work'] = 'PE'
 print info
+
+------------
+>>> info = dict()
+>>> info['name'] = 'flying'
+>>> print info
+{'name': 'flying'}
+>>> info['Age'] = '27'
+>>> info['Work'] = 'PE'
+>>> print info
+{'Age': '27', 'Work': 'PE', 'name': 'flying'}
+>>> info
+{'Age': '27', 'Work': 'PE', 'name': 'flying'}
+>>>
+----------------
 
 # !/usr/bin/python
 
