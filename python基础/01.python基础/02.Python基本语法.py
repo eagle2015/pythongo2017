@@ -40,9 +40,8 @@ Type "help", "copyright", "credits" or "license" for more information.
     下面的列表显示了在Python中的保留字。这些保留字不能用作常数或变数，或任何其他标识符名称。
     注意：所有Python的关键字只包含小写字母。
     and  exec not assert    finally or break  for pass class from print continue global raise
-    def if    return del import try elif in while else is with except    lambda yield
+    def if return del import try elif in while else is with except    lambda yield
 
     四、Python的行和缩进
      学习Python与其他语言最大的区别就是，Python的代码块不使用大括号（{}）来控制类，函数以及其他逻辑判断。python最具特色的就是用缩进来写模块。
      缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。
-   
