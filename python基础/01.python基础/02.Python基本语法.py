@@ -271,6 +271,18 @@ print str + "TEST" # 输出连接的字符串
 
 
 
+'''
+结果：
+Hello python！2017
+H
+20
+python
+llo python！2017
+Hello python！2017	Hello python！2017
+Hello python！2017	TEST
+python！
+'''
+
 七、Python列表
 List（列表） 是 Python 中使用最频繁的数据类型。
 关于列表需要注意的事项如下：
@@ -278,4 +290,72 @@ List（列表） 是 Python 中使用最频繁的数据类型。
 2、列表用[ ]标识。是python最通用的复合数据类型；
 3、列表中的值得分割也可以用到变量[头下标:尾下标]，就可以截取相应的列表，从左到右索引默认0开始的，从右到左索引默认-1开始，下标可以为空表示取到头或尾。
 4、加号（+）是列表连接运算符，星号（*）是重复操作。
+
+#list
+list = ['flying', 86, 12.23, 'eagle', 170,.2]
+tinylist = [123, 'john']
+
+print list  # 输出完整列表
+print list[0]  # 输出列表的第一个元素
+print list[1:3]  # 输出第二个至第三个的元素
+print list[2:]  # 输出从第三个开始至列表末尾的所有元素
+print tinylist * 2  # 输出列表两次
+print list + tinylist  # 打印组合的列表
+
+
+['flying', 86, 12.23, 'eagle', 170, 0.2]
+flying
+[86, 12.23]
+[12.23, 'eagle', 170, 0.2]
+[123, 'john', 123, 'john']
+['flying', 86, 12.23, 'eagle', 170, 0.2, 123, 'john']
+
+可以用来遍历一个序列
+name = ['flying','eagle','python','go','bat','a','b','t']
+for name in  range(0,len(name)):
+    print "##"* name,name
+
+八、Python元组
+元组是另一个数据类型，类似于List（列表）。元组用"()"标识。内部元素用逗号隔开。但是元素不能二次赋值，相当于只读列表。
+
+tuple =('flying', 86, 1.1, 'eagle', 1.70, 2.2)
+tinylist = (1, 'bat')
+print tuple # 输出完整列表
+print tuple[0] # 输出列表的第一个元素
+print tuple[1:3] # 输出第二个至第三个的元素
+print tuple[2:] # 输出从第三个开始至列表末尾的所有元素
+print tinylist * 2 # 输出列表两次
+print tuple + tinylist # 打印组合的列表
+print "tuple lenth:" ,len(tuple)
+
+
+元组是不允许更新的。而列表是允许更新的
+
+
+
+
+
+九 Python数据类型转换
+
+数据类型的转换，你只需要将数据类型作为函数名即可。
+以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值。
+
+int(x [,base])将x转换为一个整数
+long(x [,base] )将x转换为一个长整数
+float(x)将x转换到一个浮点数
+complex(real [,imag])创建一个复数
+str(x)将对象 x 转换为字符串
+repr(x)将对象 x 转换为表达式字符串
+eval(str)用来计算在字符串中的有效Python表达式,并返回一个对象
+tuple(s)将序列 s 转换为一个元组
+list(s)将序列 s 转换为一个列表
+set(s)转换为可变集合
+dict(d)创建一个字典。d 必须是一个序列 (key,value)元组。
+frozenset(s)转换为不可变集合
+chr(x)将一个整数转换为一个字符
+unichr(x)将一个整数转换为Unicode字符
+ord(x)将一个字符转换为它的整数值
+hex(x)将一个整数转换为一个十六进制字符串
+oct(x)将一个整数转换为一个八进制字符串
+
 
