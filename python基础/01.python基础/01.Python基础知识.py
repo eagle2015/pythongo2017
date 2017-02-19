@@ -130,3 +130,15 @@ re = raw_input([prompt])--说明：[]符号表示可用可不用
 prompt：指提示字符
 re：返回值
 
+dict = {}
+dict['one'] = "This is one"
+dict[2] = "This is two"
+tinydict  =  {'age': 27, 'Work': 'PE', 'Name': 'fly', 'Sex': 'female'}
+
+print dict['one']  # 输出键为'one' 的值
+print dict[2]  # 输出键为 2 的值
+print tinydict  # 输出完整的字典
+print tinydict.keys()  # 输出所有键
+print tinydict.values()  # 输出所有值
+
+
