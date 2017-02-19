@@ -219,19 +219,26 @@ dict2 = {'abc': 99123, 908.6: 37};
 值可以取任何数据类型，但必须是不可变的，如字符串，数或元组。
 
 二、访问字典里的值
-把相应的键放入熟悉的方括弧，如下实例:
 
+
+Python 字典可以使用键作为索引来访问/更新/添加值
+
+info = dict()
+info['name'] = 'flying'
+info['Age'] = '27'
+info['Work'] = 'PE'
+print info
 
 # !/usr/bin/python
 
-dict = {'Name': 'flying', 'Age': 7, 'Class': 'First'};
+dict = {'Name': 'flying', 'Age': 27, 'Class': 'First'};
 
 print "dict['Name']: ", dict['Name'];
 print "dict['Age']: ", dict['Age'];
 以上实例输出结果：
 
 dict['Name']:  flying
-dict['Age']:  7
+dict['Age']:  27
 
 如果用字典里没有的键访问数据，会输出错误如下：
 
@@ -628,23 +635,49 @@ print "values Value : %s" % dict.values()
 输出结果为：
 values Value : [27, 'PE', 'fly', 'female']
 
-        ---------------------------------------------
-dict 就是key value值，索引有意义
 
-和list的区别
+遍历python字典
 
-# 定义dict
-d = {
-'name':'flying'
-}
+# 遍历函数
+dict = {'age': 27, 'Work': 'PE', 'Name': 'fly', 'Sex': 'female'}
+print "#" * 7, "dict", "#" * 7
+for key in dict:
+    print "dict[%s]:" % key, dict[key]
 
-# 获取dict值
-print d['name']
+'''
+####### dict #######
+dict[age]: 27
+dict[Work]: PE
+dict[Name]: fly
+dict[Sex]: female
+'''
+print "#" * 10, "iteritems", "#" * 10
+for k, v in dict.iteritems():
+    print "dict[%s]:" % k, v
 
-# 增加新值
-d['age'] = 22
-print d['age']
-# 修改值
+print "#" * 15, "items", "$" * 15
+for (k, v) in dict.items():
+    print "dict[%s]:" % k, v
 
-d['name'] = 'eagle'
-print d['name']
+print "###########iterkeys,itervalues#######"
+for k, v in zip(dict.iterkeys(), dict.itervalues()):
+    print "dict[%s]=" % k, v
+
+'''
+########## iteritems ##########
+dict[age]: 27
+dict[Work]: PE
+dict[Name]: fly
+dict[Sex]: female
+############### items $$$$$$$$$$$$$$$
+dict[age]: 27
+dict[Work]: PE
+dict[Name]: fly
+dict[Sex]: female
+###########iterkeys,itervalues#######
+dict[age]= 27
+dict[Work]= PE
+dict[Name]= fly
+dict[Sex]= female
+
+'''

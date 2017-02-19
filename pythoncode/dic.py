@@ -153,6 +153,61 @@ dict Value : {'age': 27, 'Work': 'PE', 'Name': 'fly', 'Sex': 'female'}
 print "value Value : %s" % dict.values()
 #keys返回一个字典所有的键。
 print "keys Value: %s " % dict.keys()
-
+'''
 value Value : [27, 'PE', 'fly', 'female']
 keys Value: ['age', 'Work', 'Name', 'Sex']
+'''
+
+#遍历函数
+dict =  {'age': 27, 'Work': 'PE', 'Name': 'fly', 'Sex': 'female'}
+print "#"*7,"dict","#"*7
+for key in dict:
+    print "dict[%s]:" % key,dict[key]
+
+
+'''
+####### dict #######
+dict[age]: 27
+dict[Work]: PE
+dict[Name]: fly
+dict[Sex]: female
+'''
+print "#"*10,"iteritems","#"*10
+for  k,v in dict.iteritems():
+    print "dict[%s]:" % k,v
+
+
+print "#"*15 ,"items","$"*15
+for (k,v) in dict.items():
+    print "dict[%s]:" % k,v
+
+print "###########iterkeys,itervalues#######"
+for k,v in zip(dict.iterkeys(),dict.itervalues()):
+        print "dict[%s]=" % k,v
+
+'''
+########## iteritems ##########
+dict[age]: 27
+dict[Work]: PE
+dict[Name]: fly
+dict[Sex]: female
+############### items $$$$$$$$$$$$$$$
+dict[age]: 27
+dict[Work]: PE
+dict[Name]: fly
+dict[Sex]: female
+###########iterkeys,itervalues#######
+dict[age]= 27
+dict[Work]= PE
+dict[Name]= fly
+dict[Sex]= female
+
+'''
+
+info = dict()
+info['name'] = 'flying'
+info['Age'] = '27'
+info['Work'] = 'PE'
+print "info:%s" % info
+info.update({'name':'fly_blog', 'blogname':'eagle_blog'})
+print info
