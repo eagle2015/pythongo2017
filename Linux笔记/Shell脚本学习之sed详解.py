@@ -208,293 +208,122 @@ sed  '22{h;d};23,33{H;d};44G' pass
 七、sed脚本编写方法
 1、从文件读入命令
 
-sed - f
-sed.sh
+sed - f  sed.sh
+
 sed.sh文件内容：
 
 s / root / yerik / p
-s / bash / csh / p
+s / bash /csh / p
 
-2、直接运行脚本. / sed.sh / etc / passwd
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+2、直接运行脚本. /sed.sh  /etc/passwd
+
 # !/bib/sed -f
-s / root / yerik / p
-s / bash / csh / p
+s /root/yerik/p
+s /bash/csh/p
+
 八、小技巧
-1、用sed
-输出自己的IP
-地址
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-ifconfig
-eth0 | sed
-'2p' | sed
-'s/^.*addr:/ /g' | sed
-'s/B.*$ / /g'
+1、用sed 输出自己的IP地址
+
+ifconfig eth0 | sed '2p' | sed 's/^.*addr:/ /g' | sed  's/B.*$ / /g'
 
 2、在sed的命令行中引用shell变量时要使用双引号，而不是通常所用的单引号。下面是一个根据name变量的内容来删除named.conf文件中zone段的脚本：
-name = 'zone\ "localhost"'
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed
-"/$name/,/};/d"
-named.conf
+name = 'zone\"localhost"'
+sed  "/$name/,/};/d"  named.conf
 
 3、保持和获取：h命令和G命令
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-$ sed - e
-'/test/h' - e
-'$G example
-在sed处理文件的时候，每一行都被保存在一个叫模式空间的临时缓冲区中，除非行被删除或者输出被取消，否则所有被处理的行都将打印在屏幕上。接着模式空间被清空，并存入新的一行等待处理。在这个例子里，匹配test的行被找到后，将存入模式空间，h命令将其复制并存入一个称为保持缓存区的特殊缓冲区内。第二条语句的意思是，当到达最后一行后，G命令取出保持缓冲区的行，然后把它放回模式空间中，且追加到现在已经存在于模式空间中的行的末尾。在这个例子中就是追加到最后一行。简单来说，任何包含test的行都被复制并追加到该文件的末尾。
+
+$ sed - e '/test/h' - e '$G example
+在sed处理文件的时候，每一行都被保存在一个叫模式空间的临时缓冲区中，除非行被删除或者输出被取消，否则所有被处理的行都将打印在屏幕上。
+接着模式空间被清空，并存入新的一行等待处理。在这个例子里，匹配test的行被找到后，将存入模式空间，
+h命令将其复制并存入一个称为保持缓存区的特殊缓冲区内。第二条语句的意思是，当到达最后一行后，G命令取出保持缓冲区的行，
+然后把它放回模式空间中，且追加到现在已经存在于模式空间中的行的末尾。在这个例子中就是追加到最后一行。
+简单来说，任何包含test的行都被复制并追加到该文件的末尾。
 
 4、保持和互换：h命令和x命令
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-$ sed - e
-'/test/h' - e
-'/check/x'
-example
-互换模式空间和保持缓冲区的内容。也就是把包含test与check的行互换。
+
+$ sed - e '/test/h' - e '/check/x' example   #互换模式空间和保持缓冲区的内容。也就是把包含test与check的行互换。
 
 
 九、练习
 1，删除文件每行的第一个字符。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - n
-'s/^.//gp' / etc / passwd
-sed - nr
-'s/(.)(.*)/\2/p' / etc / passwd
 
-2，删除文件每行的第二个字符。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/(.)(.)(.*)/\1\3/p' / etc / passwd
+sed - n  's/^.//gp' / etc / passwd
+sed - nr 's/(.)(.*)/\2/p' / etc / passwd
+
+2，删除文件每行的第二个字符。 sed - nr  's/(.)(.)(.*)/\1\3/p' / etc / passwd
 
 3，删除文件每行的最后一个字符。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/.$//p' / etc / passwd
-sed - nr
-'s/(.*)(.)/\1/p' / etc / passwd
 
-4，删除文件每行的倒数第二个字符。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/(.*)(.)(.)/\1\3/p' / etc / passwd
+sed - nr 's/.$//p'  /etc/passwd
+sed - nr 's/(.*)(.)/\1/p' /etc/passwd
 
-5，删除文件每行的第二个单词。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\1\2\3\5/p' / etc / passwd
+4，删除文件每行的倒数第二个字符。  sed - nr  's/(.*)(.)(.)/\1\3/p' passwd
+
+5，删除文件每行的第二个单词。sed - nr 's/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\1\2\3\5/p' /etc/passwd
 
 6，删除文件每行的倒数第二个单词。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/(.*)([^a-Z]+)([a-Z]+)([^a-Z]+)([a-Z]+)([^a-Z]*)/\1\2\4\5\6/p' / etc / samba / smb.conf
+
+sed - nr  's/(.*)([^a-Z]+)([a-Z]+)([^a-Z]+)([a-Z]+)([^a-Z]*)/\1\2\4\5\6/p'  smb.conf
 
 7，删除文件每行的最后一个单词。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/(.*)([^a-Z]+)([a-Z]+)([^a-Z]*)/\1\2\4/p' / etc / samba / smb.conf
+
+sed - nr 's/(.*)([^a-Z]+)([a-Z]+)([^a-Z]*)/\1\2\4/p'  smb.conf
 
 8，交换每行的第一个字符和第二个字符。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/(.)(.)(.*)/\2\1\3/p' / etc / passwd
+
+sed - nr  's/(.)(.)(.*)/\2\1\3/p'  passwd
 
 9，交换每行的第一个单词和第二个单词。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\1\4\3\2\5/p' / etc / samba / smb.conf
+
+sed - nr  's/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\1\4\3\2\5/p'  smb.conf
 
 10，交换每行的第一个单词和最后一个单词。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\1\4\3\2\5/p' / etc / passwd
+
+sed - nr 's/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\1\4\3\2\5/p'   passwd
 
 11，删除一个文件中所有的数字。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed
-'s/[0-9]*//g' / etc / passwd
+
+sed  's/[0-9]*//g'  passwd
 
 12，删除每行开头的所有空格。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - n
-'s/^\ *//p' / etc / samba / smb.conf
-sed - nr
-'s/( *)(.*)/\2/p'
-testp
+
+sed - n  's/^\ *//p' smb.conf
+sed - nr 's/( *)(.*)/\2/p' testfile
 
 13，用制表符替换文件中出现的所有空格。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - n
-'s/\ /\t/gp'
-pass
+
+sed - n  's/\ /\t/gp'  file
 
 14，把所有大写字母用括号（）括起来。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/([A-Z])/(&)/gp'
-testp
-sed - n
-'s/[A-Z]/(&)/gp'
-testp
+
+sed - nr 's/([A-Z])/(&)/gp' testfile
+sed - n  's/[A-Z]/(&)/gp'  testfile
+
 15，打印每行3次。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed
-'p;p'
-pass
+sed  'p;p' pass
 
 16，隔行删除。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - n
-'1~2p'
-pass
+
+sed - n '1~2p' pass
 
 17，把文件从第22行到第33行复制到第44行后面。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed
-'1,21h;22h;23,33H;44G'
-pass
+
+sed  '1,21h;22h;23,33H;44G' pass
 
 18，把文件从第22行到第33行移动到第44行后面。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed
-'22{h;d};23,33{H;d};44G'
-pass
+
+sed '22{h;d};23,33{H;d};44G' pass
 
 19，只显示每行的第一个单词。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/([^a-Z]*)([a-Z]+)([^a-Z]+)(.*)/\2/p' / etc / passwd
+
+sed - nr 's/([^a-Z]*)([a-Z]+)([^a-Z]+)(.*)/\2/p'   passwd
 
 20，打印每行的第一个单词和第三个单词。
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-sed - nr
-'s/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\2--\4/p' / etc / passwd
 
-21，将格式为
-mm / yy / dd
-的日期格式换成
-mm；yy；dd
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-date + % m / % Y / % d | sed - n
-'s#/#;#gp'
+sed - nr 's/([^a-Z]*)([a-Z]+)([^a-Z]+)([a-Z]+)([^a-Z]+)([a-Z]+)(.*)/\2--\4/p' passwd
 
-22, 逆向输出
-[plain]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-cat
-a.txt
-ABC
-DEF
-XYZ
-输出样式变成
-XYZ
-DEF
-ABC
+21，将格式为 mm/yy/dd的日期格式换成mm；yy；dd
+
+date + % m / % Y / % d | sed - n 's#/#;#gp'
+
 
