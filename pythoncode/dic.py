@@ -55,5 +55,12 @@ print "Return Value : %d" % cmp(dict2, dict3)
 print "Return Value : %d" % cmp(dict1, dict4)
 
 
-dict = {'Name': 'flying', 'Age': 7};
+dict = {'Name': 'flying', 'Age': 27};
 print "Length : %d" % len(dict)
+print "Equivalent String : %s" % str(dict)
+print "Variable Type : %s" % type(dict)
+
+dict = {'Name': 'flying', 'Age': 27,'work':'PE'};
+print "Start Len : %d" % len(dict)
+dict.clear()
+print "End Len : %d" % len(dict)

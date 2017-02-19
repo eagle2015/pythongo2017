@@ -372,195 +372,73 @@ print "Length : %d" % len(dict)
 
 Length: 2
 
-（三）Python
-字典(Dictionary)
-str()
-方法
-1、描述
-Python
-字典(Dictionary)
-str()
-函数将值转化为适于人阅读的形式，以可打印的字符串表示。
-2、语法
-str()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-str(dict)
-3、参数
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict - - 字典。
-4、返回值
-返回字符串。
-5、实例
-以下实例展示了
-str()
+（三）Python 字典(Dictionary) str()方法
+1、描述  Python 字典(Dictionary) str() 函数将值转化为适于人阅读的形式，以可打印的字符串表示。
+2、语法 str() 方法语法：str(dict)
+3、参数 dict - - 字典。
+4、返回值 返回字符串。
+5、实例 以下实例展示了 str()
 函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7};
+dict = {'Name': 'flying', 'Age': 7};
 print "Equivalent String : %s" % str(dict)
 以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Equivalent
-String: {'Age': 7, 'Name': 'Zara'}
 
-（四）Python
-字典(Dictionary)
-type()
-方法
-1、描述
-Python
-字典(Dictionary)
-type()
-函数返回输入的变量类型，如果变量是字典就返回字典类型。
-2、语法
-type()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-type(dict)
-3、参数
-dict - - 字典。
-4、返回值
-返回输入的变量类型。
+Equivalent String : {'Age': 27, 'Name': 'flying'}
+
+（四）Python字典(Dictionary) type() 方法
+1、描述Python字典(Dictionary) type() 函数返回输入的变量类型，如果变量是字典就返回字典类型。
+2、语法type()方法语法：type(dict)
+3、参数 dict - - 字典。
+4、返回值返回输入的变量类型。
 5、实例
-以下实例展示了
-type()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+以下实例展示了type() 函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7};
+dict = {'Name': 'flying', 'Age': 27};
 print "Variable Type : %s" % type(dict)
 以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Variable
-Type: < type
-'dict' >
+
+Variable Type: < type'dict' >
 
 七、字典内置方法
 Python字典包含了以下内置函数：
-序号
-函数及描述
-1
-radiansdict.clear()
-删除字典内所有元素
-2
-radiansdict.copy()
-返回一个字典的浅复制
-3
-radiansdict.fromkeys()
-创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
-4
-radiansdict.get(key, default=None)
-返回指定键的值，如果值不在字典中返回default值
-5
-radiansdict.has_key(key)
-如果键在字典dict里返回true，否则返回false
-6
-radiansdict.items()
-以列表返回可遍历的(键, 值)
-元组数组
-7
-radiansdict.keys()
-以列表返回一个字典所有的键
-8
-radiansdict.setdefault(key, default=None)
-和get()
-类似, 但如果键不已经存在于字典中，将会添加键并将值设为default
-9
-radiansdict.update(dict2)
-把字典dict2的键 / 值对更新到dict里
-10
-radiansdict.values()
-以列表返回字典中的所有值
+序号  函数及描述
+1  radiansdict.clear()   删除字典内所有元素
+2  radiansdict.copy()    返回一个字典的浅复制
+3 radiansdict.fromkeys() 创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
+4 radiansdict.get(key, default=None) 返回指定键的值，如果值不在字典中返回default值
+5 radiansdict.has_key(key)   如果键在字典dict里返回true，否则返回false
+6 radiansdict.items()以列表返回可遍历的(键, 值) 元组数组
+7 radiansdict.keys() 以列表返回一个字典所有的键
+8 radiansdict.setdefault(key, default=None) 和get()类似, 但如果键不已经存在于字典中，将会添加键并将值设为default
+9 radiansdict.update(dict2) 把字典dict2的键 / 值对更新到dict里
+10 radiansdict.values() 以列表返回字典中的所有值
 详细解释：
-（一）Python
-字典(Dictionary)
-clear()
-方法
-1、描述
-Python
-字典(Dictionary)
-clear()
-函数用于删除字典内所有元素。
-2、语法
-clear()
-方法语法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-dict.clear()
-3、参数
-NA。
-4、返回值
-该函数没有任何返回值。
-5、实例
-以下实例展示了
-clear()
-函数的使用方法：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
+（一）Python 字典(Dictionary) clear()方法
+1、描述Python 字典(Dictionary) clear() 函数用于删除字典内所有元素。
+2、语法clear()方法语法： dict.clear()
+3、参数 NA
+4、返回值 该函数没有任何返回值。
+5、实例 以下实例展示了clear() 函数的使用方法：
+
 # !/usr/bin/python
 
-dict = {'Name': 'Zara', 'Age': 7};
+dict = {'Name': 'flying', 'Age': 27,'work':'PE'};
 
 print "Start Len : %d" % len(dict)
 dict.clear()
 print "End Len : %d" % len(dict)
 以上实例输出结果为：
-[python]
-view
-plain
-copy
-print?在CODE上查看代码片派生到我的代码片
-Start
-Len: 2
-End
-Len: 0
 
-（二）Python
-字典(Dictionary)
-copy()
-方法
-1、描述
-Python
-字典(Dictionary)
-copy()
-函数返回一个字典的浅复制。
+Start Len: 3
+End Len: 0
+
+（二）Python 字典(Dictionary) copy() 方法
+1、描述 Python 字典(Dictionary) copy() 函数返回一个字典的浅复制。
 2、语法
 copy()
 方法语法：
