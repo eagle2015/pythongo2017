@@ -269,4 +269,42 @@ Value of ((a + b) * c) / d is : 90
 Value of (a + b) * (c / d) is:  90
 Value of a + (b * c) / d is : 50
 
+
 '''
+
+'''
+num = int(raw_input("please in numble:"))
+while True:
+    if num == 13:            # 判断num的值
+        print 'boss'
+        break
+    elif num == 12:
+        print 'user'
+        break
+    elif num == 1:
+        print 'worker'
+        break
+    elif num > 50:           # 值小于零时输出
+        print 'error,you input num is big'
+        break
+    else:
+        print 'roadman'     # 条件均不成立时输出
+        exit()
+'''
+
+num = 9
+if num >= 0 and num <= 100:  # 判断值是否在0~10之间
+    print 'hello python !2017 '
+
+num = 10
+if num < 0 or num > 10:  # 判断值是否在小于0或大于10
+    print 'hello'
+else:
+    print 'undefine '
+
+num = 18
+# 判断值是否在0~5或者10~15之间
+if (num >= 0 and num <= 5) or (num >= 10 and num <= 25):
+    print 'hello go 2017 !'
+else:
+    print 'undefine'
