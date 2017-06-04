@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import  urllib,urllib2,os,cookielib
 import sys
 reload(sys)
-sys.setdefaultencoding('utf-8')#
+sys.setdefaultencoding('utf-8')#输出内容是utf-8格式
 
 
 '''
@@ -19,9 +19,11 @@ sys.setdefaultencoding('utf-8')#
 4.反爬 ，网站禁止爬虫。获取不到想要的东西，请求失败的，需要模拟浏览器访问，加上头部信息
 5.获取图片 find_all  get
 6. 下载 urlretrieve（需要下载的，路径）
+7.多页 range
+
 '''
 
-url = 'http://www.dbmeinv.com/?pager_offset=1'
+#url = 'http://www.dbmeinv.com/?pager_offset=1'
 x = 0
 
 cookie = cookielib.CookieJar()
@@ -46,5 +48,13 @@ def get_img(url):
         urllib.urlretrieve(link,'image\%s.jpg'%x) #下载
         x +=1
         print "download 第%s张"%x
-get_img(url)
+
+ #if __name__ == '__main__':
+
+for page in range(1,10):
+     page +=1
+     url = 'http://www.dbmeinv.com/?pager_offset=%d' % page
+     get_img(url)
+
+print 'download done !!!'
 
