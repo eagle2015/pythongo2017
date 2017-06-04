@@ -5,6 +5,9 @@
 
 from bs4 import BeautifulSoup
 import  urllib,urllib2,os,cookielib
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')#
 
 
 '''
@@ -38,5 +41,10 @@ def get_img(url):
     for girl in girl_img:  #遍历
         link = girl.get('src') #获取src 图片
         print link
+
+        global x
+        urllib.urlretrieve(link,'image\%s.jpg'%x) #下载
+        x +=1
+        print "download 第%s张"%x
 get_img(url)
 
