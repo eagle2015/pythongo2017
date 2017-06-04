@@ -2,6 +2,7 @@ Python 函数
 
 函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。
 函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，比如print()。但你也可以自己创建函数，这被叫做用户自定义函数。
+
 定义一个函数
 你可以定义一个由自己想要功能的函数，以下是简单的规则：
 函数代码块以
@@ -57,7 +58,8 @@ printme("再次调用同一函数");
 在python中，类型属于对象，变量是没有类型的：
 a = [1, 2, 3]
 a = "flying"
-以上代码中，[1, 2, 3]是List类型，"flying"是String类型，而变量a 是没有类型，她仅仅是一个对象的引用（一个指针），可以是List类型对象，也可以指向String类型对象。
+以上代码中，[1, 2, 3]是List类型，"flying"是String类型，而变量a 是没有类型，她仅仅是一个对象的引用（一个指针），可以是List类型对象，
+也可以指向String类型对象。
 可更改(mutable)与不可更改(immutable)对象 在 python中，strings, tuples, 和 numbers是不可更改的对象，而list, dict等则是可以修改的对象。
 
 不可变类型：变量赋值
@@ -84,7 +86,8 @@ b = 2
 ChangeInt(b)
 print b  # 结果是 2
 
-实例中有int 对象2，指向它的变量是b，在传递给ChangeInt函数时，按传值的方式复制了变量b，a和b都指向了同一个Int对象，在a = 10时，则新生成一个int值对象10，并让a指向它。
+实例中有int 对象2，指向它的变量是b，在传递给ChangeInt函数时，按传值的方式复制了变量b，a和b都指向了同一个Int对象，在a = 10时，
+则新生成一个int值对象10，并让a指向它。
 
 传可变对象实例
 
@@ -130,7 +133,8 @@ def printme(str):
 # 调用printme函数
 printme();
 以上实例输出结果：
-Traceback(most recent call last): File "test.py", line 11, in < module > printme(); TypeError: printme() takes exactly 1 argument(0 given)
+Traceback(most recent call last): File "test.py", line 11, in < module > printme();
+TypeError: printme() takes exactly 1 argument(0 given)
 
 关键字参数
 关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。
@@ -277,7 +281,8 @@ total = sum(10, 20);
 局部变量
 全局变量和局部变量
 定义在函数内部的变量拥有一个局部作用域，定义在函数外的拥有全局作用域。
-局部变量只能在其被声明的函数内部访问，而全局变量可以在整个程序范围内访问。调用函数时，所有在函数内声明的变量名称都将被加入到作用域中。如下实例：
+局部变量只能在其被声明的函数内部访问，而全局变量可以在整个程序范围内访问。调用函数时，所有在函数内声明的变量名称都将被加入到作用域中。
+如下实例：
 # !/usr/bin/python
 # -*- coding: UTF-8 -*-
 
