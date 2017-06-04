@@ -32,6 +32,11 @@ def get_img(url):
     req = urllib2.Request(url,headers=headers) #创建对象
     page = urllib2.urlopen(req,timeout=30) #设置超时时间
     contents = page.read()#获取源码
-    print contents
+    #print contents
+    soup = BeautifulSoup(contents,'html.parser')
+    girl_img = soup.find_all('img') #找到img标签
+    for girl in girl_img:  #遍历
+        link = girl.get('src') #获取src 图片
+        print link
 get_img(url)
 
