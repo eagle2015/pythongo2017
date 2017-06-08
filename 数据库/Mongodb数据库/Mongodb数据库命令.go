@@ -427,3 +427,6 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 > db.array.find({},{'_id':0})
 { "age" : 65, "name" : "laoda", "phone" : [ 333 ] }
+
+
+
