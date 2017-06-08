@@ -93,7 +93,7 @@
     <excluded>
       <root url="file://D:/gopath/src" />
       <root url="file://$PROJECT_DIR$" />
-      <root url="file://$PROJECT_DIR$/../untitled/go语言" />
+      <root url="file://$PROJECT_DIR$/go语言" />
     </excluded>
   </library>
 </component>
